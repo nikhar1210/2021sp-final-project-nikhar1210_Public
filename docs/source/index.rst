@@ -220,7 +220,7 @@ task is dependent to and what atomic target it generates.
 
 I won't be able to go into details what each task exactly doing and how it is
 doing due to IP violation. But, there is some brief commentary about each of these
-processes under final_proj_model module. It is available under module index.
+processes under final_proj_model module. It is available under :ref: `module index <textprep>`.
 
 \
 
@@ -264,7 +264,7 @@ high efficiency using advanced python techniques. If these concepts were not int
 I would have thought this is the best I could do. But advanced python has allowed me to become
 better solution provider.
 
-
+\
 
 
 
@@ -275,6 +275,20 @@ better solution provider.
 
 
    modules
+
+.. toctree::
+   :maxdepth: 2
+   :caption: TextPrep:
+
+   text_prep_func
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: WordDic:
+
+   word_dic
+
 
 
 

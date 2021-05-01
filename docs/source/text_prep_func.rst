@@ -1,3 +1,5 @@
+.. _textprep:
+
 text\_prep\_func module
 =======================
 
