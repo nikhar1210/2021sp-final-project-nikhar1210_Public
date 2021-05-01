@@ -23,7 +23,7 @@ from luigi import LocalTarget
 import dask.dataframe as ddf
 from dask.distributed import Client
 import joblib
-from src.text_prep_func import clean_text
+from text_prep_func import clean_text
 # Sklearn
 import pickle
 from scipy import sparse
