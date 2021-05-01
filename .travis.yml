@@ -11,7 +11,7 @@ before_script: # code coverage tool
    - chmod +x ./cc-test-reporter
    - ./cc-test-reporter before-build
 script:
-  - pytest --cov-report xml --cov-report term
+  - pytest
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
