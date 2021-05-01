@@ -273,9 +273,8 @@ better solution provider.
    :maxdepth: 2
    :caption: Contents:
 
-   final_proj_model
-   text_prep_func
-   word_dic
+
+   modules
 
 
 
