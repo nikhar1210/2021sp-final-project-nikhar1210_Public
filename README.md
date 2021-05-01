@@ -1,8 +1,9 @@
 # Final Project
 
-[![Build Status](https://travis-ci.com/nikhar1210/2021sp-final-project-nikhar1210_Public.svg?branch=main)](https://travis-ci.com/nikhar1210/2021sp-final-project-nikhar1210_Public)
+[![Build Status](https://travis-ci.com/nikhar1210/2021sp-final-project-nikhar1210_Public.svg?branch=master)](https://travis-ci.com/nikhar1210/2021sp-final-project-nikhar1210_Public)
 
-###Please find final submission document at:
+### Please find final submission document at:
+
 **https://2021sp-final-project-nikhar1210-public.readthedocs.io/en/latest/index.html**
 
 
