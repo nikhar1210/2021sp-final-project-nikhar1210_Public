@@ -1,0 +1,10 @@
+dask[dataframe]==2021.4.1
+joblib==1.0.1
+luigi==3.0.3
+nltk==3.6.2
+pandas==1.2.4
+pyLDAvis==3.3.1
+scikit-learn==0.24.2
+Sphinx==3.5.4
+sphinx-rtd-theme==0.5.2
+vertica-python==1.0.1
