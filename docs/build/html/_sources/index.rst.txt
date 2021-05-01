@@ -6,11 +6,6 @@
 Welcome to Text Analytics Using Advanced Python's documentation!
 ================================================================
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-
 Abstract
 ========
 
@@ -268,6 +263,19 @@ We learned that how important it is to modularize your pipeline and execute each
 high efficiency using advanced python techniques. If these concepts were not introduced to me
 I would have thought this is the best I could do. But advanced python has allowed me to become
 better solution provider.
+
+
+
+
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   final_proj_model
+   text_prep_func
+   word_dic
 
 
 
