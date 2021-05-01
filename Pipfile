@@ -14,6 +14,9 @@ nltk = "*"
 sphinx = "*"
 pyldavis = "*"
 sphinx-rtd-theme = "*"
+canvasapi = "*"
+gitpython = "*"
+environs = "*"
 
 [dev-packages]
 
