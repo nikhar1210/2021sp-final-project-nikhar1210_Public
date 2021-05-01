@@ -1,7 +1,18 @@
 # Final Project
 
-Add any badges to your ***published documentation*** up here!
+[![Build Status](https://travis-ci.com/nikhar1210/2021sp-final-project-nikhar1210_Public.svg?branch=main)](https://travis-ci.com/nikhar1210/2021sp-final-project-nikhar1210_Public)
 
+###Please find final submission document at:
+**https://2021sp-final-project-nikhar1210-public.readthedocs.io/en/latest/index.html**
+
+
+
+\
+\
+\
+\
+\
+\
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*

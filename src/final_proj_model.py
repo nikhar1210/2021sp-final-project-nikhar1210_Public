@@ -5,15 +5,6 @@ luigi main
 """
 
 
-
-"""
-Introduction:
-In 2020, Mercedes-Benz USA call centers handled 1.5 million inbound customer service calls. 
-The company wanted to utilize this data to understand the need of our customers. 
-My team created a topic model that analyzes transcripts and classifies them into a cluster of words associated with business processes. 
-It serves the purpose for a training team but has some shortcomings.
-"""
-
 import luigi
 from luigi import util
 import vertica_python
@@ -43,8 +34,8 @@ class data_load(ExternalProgramTask):
 
     def program_args(self):
         return('python', '')
-    
-    
+
+
     def run(self):
 
         conn_info={'host':'safsand',
@@ -58,12 +49,12 @@ class data_load(ExternalProgramTask):
         connection=vertica_python.connect(**conn_info)
         cur=connection.cursor()
         cur.execute(""" select * from abc""")
-        ...
+        # .....
         connection.close()
-        ...
+        # ....
         ddf.to_parquet(self.output().path)
-        
-        
+
+
 @luigi.util.requires(data_load)
 class concat_transcript(ExternalTask):
     """
@@ -74,11 +65,12 @@ class concat_transcript(ExternalTask):
 
     def output(self):
         return LocalTarget('transcript_ddf.parquet')
-    
+
     def run(self):
-        
+
         full_df = ddf.read_parquet(self.input().path)
-        ...
+
+        ##### .....
 
         ddf.to_parquet(self.output().path)
 
@@ -91,25 +83,25 @@ class dask_norm(Task):
 
     def output(self):
         return LocalTarget('norm_transcript.parquet')
-    
+
     def run(self):
-        
+
         norm_ls = ddf.read_parquet(self.input().path)
 
-        ...
+        # ...
 
         client = Client(n_workers=8, memory_limit='4GB')
 
-        ...
+        # ...
 
         result = dask_dataframe.map_partitions(clean_text, meta=norm_ls)
-        
+
 
         df_w_dask = result.compute()
-        
+
         client.close()
 
-        ...
+        #  ...
 
         norm_df.to_parquet(self.output().path)
 
@@ -121,31 +113,31 @@ class filter_unqualified_call(Task):
     """
     def output(self):
         return LocalTarget('norm_corpus_df.parquet')
-    
+
     def run(self):
-        
+
         raw_data = ddf.read_parquet(self.input()['raw_data'].path)
         norm_corp = ddf.read_parquet(self.input()['norm_corp'].path)
-        
-        ...
+
+        # ...
 
         norm_corp_ddf.to_parquet(self.output().path)
-        
+
 
 @luigi.util.requires(filter_unqualified_call)
 class word_matrix(Task):
     """
     This task creates topic word matrix
     """
-    
+
     def output(self):
         return LocalTarget("topicmatrix.npz")
-    
+
     def run(self):
-        
+
         import_normalized_df = ddf.read_parquet(self.input().path)
 
-        ...
+        # ...
 
         X = vectorizer.fit_transform(documents)
         pickle.dump(vectorizer,open('vectorizer_luigi.pkl','wb'))
@@ -160,16 +152,16 @@ class model_train(Task):
     """
     def output(self):
         return LocalTarget("luigi_train_model_output.pkl")
-    
+
     def run(self):
-        
+
         X = sparse.load_npz(self.input().path)
 
         client = Client(n_workers=8, memory_limit='4GB')
 
         with joblib.parallel_backend('dask'):
             lda_output = lda_model.fit_transform(X)
-        
+
         client.close()
 
         pickle.dump(lda_output,open(self.output().path,'wb'))
@@ -180,14 +172,14 @@ class model_viz(Task):
     """
     This task generates model vizualization
     """
-    
+
     def output(self):
         return LocalTarget('luigi_model_viz.html')
-    
+
     def run(self):
 
-        lda_output =  pickle.load(open(self.input().path,'rb'))
-        
+        lda_output = pickle.load(open(self.input().path,'rb'))
+
         panel = pyLDAvis.sklearn.prepare(lda_model, X, vectorizer, mds='tsne',  sort_topics = False)
 
         pyLDAvis.save_html(panel, self.output().path)

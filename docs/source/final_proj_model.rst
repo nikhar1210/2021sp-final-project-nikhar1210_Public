@@ -1,3 +1,5 @@
+.. _finalproj:
+
 final\_proj\_model module
 =========================
 

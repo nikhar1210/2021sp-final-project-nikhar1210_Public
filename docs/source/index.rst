@@ -118,6 +118,16 @@ One can argue why can't we harness the power of cloud and use infinite processin
 use NPPI sensitive data on cloud, Daimler AG is very sensitive about how customer data is used and therefore moving this to cloud will
 be subjected to security internal audit review.
 
+* Why Luigi?
+
+Being purely python based solution it was our first choice. Also, luigi allows us more flexibity
+in terms of scheduling tasks our way. Lastly, we plan to have salted target implementation in future
+and luigi's more flexibility goes in its favor.
+
+* Why dask?
+
+It was an easy choice as it allowed us to do parallel processing on local machines
+
 
 2) Existing Solution
 
@@ -266,7 +276,9 @@ better solution provider.
 
 \
 
+:ref: `final proj index <finalproj>`
 
+\
 
 
 .. toctree::

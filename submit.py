@@ -95,6 +95,7 @@ def get_submission_comments(repo: Repo, qsubmission: QuizSubmission) -> Dict:
         quiz_submission_id=qsubmission.id,
         quiz_attempt=qsubmission.attempt,
         travis_url="https://travis-ci.com/github/nikhar1210/2021sp-final-project-nikhar1210_Public/",
+        project_link="https://2021sp-final-project-nikhar1210-public.readthedocs.io/en/latest/index.html",
     )
 
 
